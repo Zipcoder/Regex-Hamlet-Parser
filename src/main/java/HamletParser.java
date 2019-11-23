@@ -19,17 +19,15 @@ public class HamletParser {
 
     public String changeHoratio(String stringToParse) {
         String regex1 = "Horatio";
-        Pattern pattern = Pattern.compile(regex1);
-        Matcher matcherHam = pattern.matcher(stringToParse);
-        String newStory = matcherHam.replaceAll("Tariq");
-
-
+        Pattern pattern = Pattern.compile(regex1, Pattern.CASE_INSENSITIVE);
+        Matcher matcherHor = pattern.matcher(stringToParse);
+        String newStory = matcherHor.replaceAll("Tariq");
         return newStory;
     }
 
     public String changeHamlet(String stringToParse) {
         String regex = "Hamlet";
-        Pattern pattern = Pattern.compile(regex);
+        Pattern pattern = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
         Matcher matcherHam = pattern.matcher(stringToParse);
         String newStory = matcherHam.replaceAll("Leon");
         return newStory;

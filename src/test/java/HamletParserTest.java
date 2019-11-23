@@ -3,6 +3,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.io.IOException;
+import java.util.Arrays;
 
 import static org.junit.Assert.*;
 
@@ -33,6 +34,8 @@ public class HamletParserTest {
     @Test
     public void testChangeHoratioToTariq() {
         String tester = hamletParser.changeHoratio(hamletText);
+        System.out.println(tester);
+
         Assert.assertFalse(hamletParser.findHoratio(tester));
 
     }
@@ -41,6 +44,7 @@ public class HamletParserTest {
     public void testFindHoratio() {
         Assert.assertTrue(hamletParser.findHoratio(hamletText));
         Assert.assertFalse(hamletParser.findHoratio("Hopatio is a dude of some sort"));
+
     }
 
     @Test

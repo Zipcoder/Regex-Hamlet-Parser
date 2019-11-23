@@ -34,13 +34,6 @@ public class HamletParserTest {
     }
 
     @Test
-    public void testChangeBoth() {
-        String actual = Replacer.replaceHamlet(hamletText);
-        actual = Replacer.replaceHoratio(actual);
-        Assert.assertEquals("", actual);
-    }
-
-    @Test
     public void testChangeHoratioToTariq() {
         Assert.assertTrue(Replacer.find(hamletText, "Horatio"));
 

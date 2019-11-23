@@ -18,7 +18,8 @@ public class HamletParser {
         File file = new File(classLoader.getResource("hamlet.txt").getFile());
         StringBuilder result = new StringBuilder("");
 
-        try(Scanner scanner = new Scanner(file)){
+        try{
+            Scanner scanner = new Scanner(file);
             while(scanner.hasNextLine()){
                 String line = scanner.nextLine();
                 result.append(line).append("\n");

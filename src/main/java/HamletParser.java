@@ -1,6 +1,10 @@
 import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
+import java.sql.SQLOutput;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 
 /**
  * Created by thook on 10/7/15.
@@ -11,6 +15,22 @@ public class HamletParser {
 
     public HamletParser(){
         this.hamletData = loadFile();
+    }
+
+    public String hamletReplacer(String data) {
+        Pattern pattern = Pattern.compile("Hamlet");
+        Matcher matcher = pattern.matcher(data);
+
+        data = matcher.replaceAll("Leon");
+        return data;
+    }
+
+    public String horatioReplacer(String data) {
+        Pattern pattern = Pattern.compile("Horatio");
+        Matcher matcher = pattern.matcher(data);
+
+        data = matcher.replaceAll("Tariq");
+        return data;
     }
 
     private String loadFile(){
@@ -24,7 +44,6 @@ public class HamletParser {
                 result.append(line).append("\n");
             }
 
-            scanner.close();
         }catch(IOException e){
             e.printStackTrace();
         }
@@ -35,5 +54,10 @@ public class HamletParser {
     public String getHamletData(){
         return hamletData;
     }
+
+    public String parseHamlet() {
+        return horatioReplacer(hamletReplacer(this.hamletData));
+    }
+
 
 }

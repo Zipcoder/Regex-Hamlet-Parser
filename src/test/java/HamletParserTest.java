@@ -51,5 +51,6 @@ public class HamletParserTest {
     public void testFindHamlet() {
         Assert.assertTrue(hamletParser.findHamlet(hamletText));
         Assert.assertFalse(hamletParser.findHamlet("Hamjet is a dude of some sort"));
+        Assert.assertTrue(hamletParser.findHamlet("HAMLET"));
     }
 }

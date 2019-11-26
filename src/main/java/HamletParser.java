@@ -18,16 +18,16 @@ public class HamletParser {
     }
 
     public String changeHoratio(String stringToParse) {
-        String regex1 = "Horatio";
-        Pattern pattern = Pattern.compile(regex1, Pattern.CASE_INSENSITIVE);
+        String regex1 = "(?i)Horatio";
+        Pattern pattern = Pattern.compile(regex1);
         Matcher matcherHor = pattern.matcher(stringToParse);
         String newStory = matcherHor.replaceAll("Tariq");
         return newStory;
     }
 
     public String changeHamlet(String stringToParse) {
-        String regex = "Hamlet";
-        Pattern pattern = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
+        String regex = "(?i)Hamlet";
+        Pattern pattern = Pattern.compile(regex);
         Matcher matcherHam = pattern.matcher(stringToParse);
         String newStory = matcherHam.replaceAll("Leon");
         return newStory;
@@ -35,13 +35,13 @@ public class HamletParser {
     }
 
     public Boolean findHamlet(String stringToParse){
-        String regex = "Hamlet";
+        String regex = "(?i)Hamlet";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcherHam = pattern.matcher(stringToParse);
         return matcherHam.find();
     }
     public Boolean findHoratio(String stingToParse){
-        String regex2 = "Horatio";
+        String regex2 = "(?i)Horatio";
         Pattern pattern2 = Pattern.compile(regex2);
         Matcher matcherHor = pattern2.matcher(stingToParse);
         return matcherHor.find();

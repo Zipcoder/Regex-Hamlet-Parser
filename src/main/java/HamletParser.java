@@ -41,16 +41,4 @@ public class HamletParser {
     public String getHamletData(){
         return hamletData;
     }
-
-    public Boolean findHamlet(){
-        Pattern r = Pattern.compile("(Hamlet)");
-        Matcher m = r.matcher(this.hamletData);
-        //System.out.println(m.find());
-        return m.find();
-    }
-
-    public void findHoratio(){
-
-    }
-
 }

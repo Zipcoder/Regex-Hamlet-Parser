@@ -1,3 +1,4 @@
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -23,9 +24,15 @@ public class HamletParserTest {
 
     @Test
     public void testFindHoratio() {
+        Boolean actual  = hamletParser.findPattern(this.hamletText,"Horatio");
+
+        Assert.assertTrue(actual);
     }
 
     @Test
     public void testFindHamlet() {
+        Boolean actual  = hamletParser.findPattern(this.hamletText,"Hamlet");
+
+        Assert.assertTrue(actual);
     }
 }

@@ -1,6 +1,7 @@
 import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
@@ -41,6 +42,15 @@ public class HamletParser {
         Pattern pattern1 = Pattern.compile(pattern);
 
         return pattern1.matcher(textToSearch).find();
+    }
+
+    public String replaceString(String textToSearch, String pattern, String newWord){
+        Pattern pattern1 = Pattern.compile(pattern);
+        Matcher matcher = pattern1.matcher(textToSearch);
+
+        String result = matcher.replaceAll(newWord);
+
+        return result;
     }
 
 }

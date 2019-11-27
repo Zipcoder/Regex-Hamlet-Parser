@@ -16,10 +16,16 @@ public class HamletParserTest {
 
     @Test
     public void testChangeHamletToLeon() {
+        String result = hamletParser.replaceString(hamletText,"Hamlet","Leon");
+        Boolean actual  = hamletParser.findPattern(result,"Hamlet");
+        Assert.assertFalse(actual);
     }
 
     @Test
     public void testChangeHoratioToTariq() {
+        String result = hamletParser.replaceString(hamletText,"Horatio","Tariq");
+        Boolean actual  = hamletParser.findPattern(result,"Horatio");
+        Assert.assertFalse(actual);
     }
 
     @Test

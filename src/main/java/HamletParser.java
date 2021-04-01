@@ -1,3 +1,5 @@
+import com.sun.xml.internal.rngom.digested.DPattern;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
@@ -61,6 +63,24 @@ public class HamletParser {
             newString = matcher.replaceAll("Tariq");
         }
         return newString;
+    }
+    public boolean findHoratio(){
+        Pattern pattern = Pattern.compile("(Horatio)",Pattern.CASE_INSENSITIVE);
+        Matcher matcher = pattern.matcher(hamletData);
+        boolean matchFound = matcher.find();
+        if(matchFound){
+            return true;
+        }
+        return false;
+    }
+    public boolean findHamlet(){
+        Pattern pattern = Pattern.compile("(Hamlet)",Pattern.CASE_INSENSITIVE);
+        Matcher matcher = pattern.matcher(hamletData);
+        boolean matchFound = matcher.find();
+        if(matchFound){
+            return true;
+        }
+        return false;
     }
 
 }

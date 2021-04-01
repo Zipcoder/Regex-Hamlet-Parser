@@ -38,9 +38,19 @@ public class HamletParserTest {
 
     @Test
     public void testFindHoratio() {
+        //Action
+        boolean actual = hamletParser.findHoratio();
+
+        //Assert
+        Assert.assertTrue(actual);
     }
 
     @Test
     public void testFindHamlet() {
+        //Action
+        boolean actual = hamletParser.findHamlet();
+
+        //
+        Assert.assertTrue(actual);
     }
 }
